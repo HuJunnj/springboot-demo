@@ -9,7 +9,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 输出 SQL 到控制台
 logging:
   level:
-    com.baomidou.mybatisplus: DEBUG
+    com.baomidou.mybatis plus: DEBUG
     org.mybatis: DEBUG
 
 

@@ -60,6 +60,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- JJWT API -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version> <!-- 这里使用最新的版本 -->
+        </dependency>
+
+        <!-- JJWT 实现库 -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.5</version> <!-- 必须与jjwt-api版本一致 -->
+        </dependency>
+
+        <!-- JJWT Jackson 解析支持（用于序列化和反序列化） -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.11.5</version> <!-- 必须与jjwt-api版本一致 -->
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

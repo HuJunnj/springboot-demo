@@ -10,6 +10,6 @@ public class WebMvcConfigurer implements org.springframework.web.servlet.config.
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyInterceptor())
                 .addPathPatterns("/**")  // 设置拦截路径
-                .excludePathPatterns("/api/exclude"); // 设置不拦截的路径
+                .excludePathPatterns("/login","/error"); // 设置不拦截的路径
     }
 }

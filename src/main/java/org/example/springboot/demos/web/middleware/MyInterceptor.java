@@ -8,12 +8,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class MyInterceptor implements HandlerInterceptor {
+
+    private static final String Authorization = "Authorization";
     private static final Logger logger = LoggerFactory.getLogger(MyInterceptor.class);
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 在请求处理之前
         logger.info("Request intercepted by MyInterceptor");
-        return true;  // 返回 true 表示继续处理请求，返回 false 则中止请求
+       String Token = request.getHeader("Authorization");
+       if (Token.isEmpty()) {
+           throw new Exception("没有正确设置Token");
+       } else {
+           if (!JwtUtils.isValidToken(Token)) {
+               // 如果 token 无效，返回 401 未授权状态
+               response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+               response.getWriter().write("Unauthorized: Invalid or missing token");
+               return false;  // 阻止请求继续执行
+           } else {
+               return true;
+           }
+       }
+        // 返回 true 表示继续处理请求，返回 false 则中止请求
     }
 
     @Override
