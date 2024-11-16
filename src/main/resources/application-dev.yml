@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jun?serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 输出 SQL 到控制台
+logging:
+  level:
+    com.baomidou.mybatisplus: DEBUG
+    org.mybatis: DEBUG
+
+
