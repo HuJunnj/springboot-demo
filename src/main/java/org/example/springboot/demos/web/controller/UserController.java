@@ -19,11 +19,11 @@ import java.util.List;
  * @since 2024-11-16
  */
 @RestController
-@RequestMapping("/demos.web/user")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     IUserService iUserService;
-    @RequestMapping("/get/users")
+    @RequestMapping("get/users")
     public List<User> getUsers(){
         return iUserService.list();
     }

@@ -1,5 +1,7 @@
 server:
   port: 8080
+  servlet:
+    context-path: /cms
 spring:
   profiles:
     active: dev # 默认启用开发环境
