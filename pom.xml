@@ -89,7 +89,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
-
+        <!-- Spring Boot Starter for RabbitMQ 集成rabbitmq -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <!-- EasyExcel -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -107,6 +111,13 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.32</version> <!-- 使用适合你项目的版本 -->
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Apache POI (EasyExcel 需要的依赖) -->

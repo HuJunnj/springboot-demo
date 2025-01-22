@@ -5,3 +5,9 @@ server:
 spring:
   profiles:
     active: dev # 默认启用开发环境
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
