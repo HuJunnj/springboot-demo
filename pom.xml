@@ -24,6 +24,11 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.16.6</version> <!-- 使用适合你项目的版本 -->
+        </dependency>
 
         <!-- MyBatis-Plus 核心依赖 -->
         <dependency>
