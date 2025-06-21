@@ -15,7 +15,7 @@ public class RedisServiceImpl {
         RLock lock = redissonClient.getLock("myLock");
         try {
             // 尝试获取锁并设置最大持有时间为10秒
-            if (lock.tryLock(10, 10, TimeUnit.SECONDS)) {
+            if (lock.tryLock(5, 10, TimeUnit.SECONDS)) {
                 System.out.println("Task started");
 
                 // 模拟任务执行

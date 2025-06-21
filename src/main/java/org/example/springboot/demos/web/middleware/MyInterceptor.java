@@ -15,7 +15,7 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 在请求处理之前
         logger.info("Request intercepted by MyInterceptor");
-       String Token = request.getHeader("Authorization");
+       String Token = request.getHeader(Authorization);
        if (Token.isEmpty()) {
            throw new Exception("没有正确设置Token");
        } else {
